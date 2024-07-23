@@ -2,7 +2,8 @@ import logging
 import os
 from configparser import ConfigParser
 
-
+DJANGO = 'django'
+SECRET_KEY = 'secret_key'
 
 EXCEPTION_TAG = 'exception_tag'
 
@@ -39,6 +40,10 @@ class Config:
         if not value:
             value = self.config.get(section, item)
         return value
+
+    @property
+    def django_secret_key(self):
+        return self.get_property(DJANGO, SECRET_KEY)
 
     @property
     def log_file(self):

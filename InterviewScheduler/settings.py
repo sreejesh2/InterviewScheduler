@@ -24,7 +24,7 @@ config = Config.get_instance()
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b+fqiq29doi7f8fy*qt#!4b-q3aw+le9r45*w_e^^^hc#1s^hc'
+SECRET_KEY = config.django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
